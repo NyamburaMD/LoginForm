@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthContext";
 
 const SignupForm = () => {
+  const {signup} = useContext(AuthContext)
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+
   const handleSignup = () => {
-    navigate("/dashboard");
+    if (email && password && username) {
+        signup (email, password, username);
+        navigate("/dashboard");
+    } else {
+        alert("Please fill in all fields")
+    }
+    
   };
 
   const goToLogin = () => {
@@ -21,13 +34,28 @@ const SignupForm = () => {
 
       <div className="inputs">
         <div className="input">
-          <input type="text" placeholder="Enter Username" />
+          <input 
+            type="text" 
+            placeholder="Enter Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            />
         </div>
         <div className="input">
-          <input type="email" placeholder="Enter Email Address" />
+          <input 
+            type="email" 
+            placeholder="Enter Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            />
         </div>
         <div className="input">
-          <input type="password" placeholder="Enter strong Password" />
+          <input 
+            type="password" 
+            placeholder="Enter strong Password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
         </div>
       </div>
 
