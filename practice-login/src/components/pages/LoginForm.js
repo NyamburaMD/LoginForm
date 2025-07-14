@@ -4,11 +4,12 @@ import {useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
     const navigate = useNavigate();
+
     const handleLogin = () => {
         navigate("/dashboard")
     };
     const goToSignup = () => {
-        navigate("/SignupForm")
+        navigate("/signup")
     };
 
     return (
@@ -31,7 +32,7 @@ const LoginForm = () => {
             </div>
 
             <div className="submit-container">
-                <div className="submit" onClick={handleLogin}>Log in</div>
+                <button className="submit" onClick={handleLogin}>Log in</button>
             </div>
 
             <div style={{ marginTop: "10px", cursor: "pointer" }} onClick={goToSignup}>
