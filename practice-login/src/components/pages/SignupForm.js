@@ -1,16 +1,14 @@
 import React from "react";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom"; 
 
 const SignupForm = () => {
-    const useNavigate = () => {
-        
-        const handleSignup = () => {
-            Navigate("/dashboard");
-        };
+    const navigate = useNavigate();
+    const handleSignup = () => {
+        navigate("/dashboard");
+    }
 
-        const goToLogin = () => {
-            Navigate("/LoginForm")
-        }
+    const goToLogin = () => {
+        navigate("/")
     }
 
     return (
@@ -45,7 +43,7 @@ const SignupForm = () => {
                 Already have an account? Log in
             </div>
 
-            </div>
+          </div>
 
         </div>
     );

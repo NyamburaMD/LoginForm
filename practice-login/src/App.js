@@ -1,12 +1,12 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import LoginForm from './components/Reusable/LoginForm';
-import SignupForm from './components/Reusable/SignupForm';
+import AppRoutes from './components/Routes/Routes';
 
 function App() {
   return (
-    <div>
-      <SignupForm />
-    </div>
+    <Router>
+      <AppRoutes />
+    </Router>
   );
 }
 

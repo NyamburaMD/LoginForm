@@ -71,5 +71,7 @@ header {
   width: 150px;
   height: 38px;
   background-color: #b970ed;
+  font-size: 19px;
   border-radius: 6px;
+  text-align: center;
 }
